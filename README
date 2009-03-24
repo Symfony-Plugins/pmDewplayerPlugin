@@ -1,0 +1,47 @@
+= pmDewplayerPlugin =
+
+This plugin provides a mp3 player for your symfony projects. This mp3 player is Dewplayer, which can be found here: http://www.alsacreations.fr/dewplayer-en
+
+== Installation ==
+
+  * Installation from svn
+
+  {{{
+    $ svn co http://svn.symfony-project.com/plugins/pmDewplayerPlugin/trunk pmDewplayerPlugin
+  }}}
+
+  * Installation from pear
+
+  {{{
+    $ symfony plugin:install pmDewplayerPlugin
+  }}}
+
+  In both cases, create this symlink:
+
+  {{{
+    $ cd web
+    $ ln -s ../plugins/pmDewplayerPlugin/web pmDewplayerPlugin
+    $ cd ..
+  }}}
+
+== Usage ==
+
+  {{{
+    <?php use_helper("Dewplayer") ?>
+
+    <?php echo dewplayer(public_path("uploads/an_audio_file.mp3", true), array("autostart" => "true")) ?>
+    <?php echo dewplayer_mini(array(public_path("uploads/an_audio_file.mp3", true), public_path("uploads/another_audio_file.mp3", true)), array("autostart" => "true")) ?>
+  }}}
+
+== Options ==
+
+  You can pass options to the functions, such as:
+
+  * "bgcolor" => "000080" (without #)
+  * "transparent" => true
+  * "volume" => "90"
+  * "autostart" => true
+  * "autoreplay" => true
+  * "showtime" => true
+  * "nopointer" => true
+  * "randomplay" => true
