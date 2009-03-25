@@ -81,7 +81,7 @@ function _get_player($type)
 
   $player .= ".swf";
 
-  return public_path("/pmDewplayerPlugin/$player");
+  return public_path("/pmDewplayerPlugin/$player", true);
 }
 
 /**
@@ -136,7 +136,7 @@ function _dewplayer_common($type, $files, $options = array())
 
   $html .= content_tag("param", null, array("name" => "movie", "value" => $player));
 
-  $html .= tag("/object", null, false);
+  $html .= tag("/object", null, true);
 
   return $html;
 }
